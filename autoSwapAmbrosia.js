@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Auto Swap Ambrosia Layout
 // @namespace    http://tampermonkey.net/
-// @version      2025-12-19
+// @version      0.1
 // @description  A simple script for the game synergism that makes auto swaps between 2 ambrosia loadouts while on the ambrosia tab.
 // @author       IkerStream
 // @match        https://synergism.cc/
