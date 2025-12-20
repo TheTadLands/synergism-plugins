@@ -54,7 +54,7 @@
         const container = document.createElement("div");
         container.style.display = "flex";
         container.style.justifyContent = "space-between";
-        container.style.width = ambrosiaBar.computedStyleMap().get("width");
+        container.style.width = getComputedStyle(ambrosiaBar).width;
         container.insertAdjacentElement("beforeend", loadoutStandard);
         container.insertAdjacentElement("beforeend", infoText);
         container.insertAdjacentElement("beforeend", loadoutLuck);
