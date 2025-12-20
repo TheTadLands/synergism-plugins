@@ -3,7 +3,7 @@ A small selection of synergism plugins.
 
 ## Ambrosia Clipboard
 A script that adds a button that allows u to import ambrosia loadouts from the clipboard.
-<img width="1192" height="1025" alt="image" src="https://github.com/user-attachments/assets/f10a20b3-b41c-465e-a918-2aa79ccddf13" />
+<img height="440" alt="image" src="https://github.com/user-attachments/assets/f10a20b3-b41c-465e-a918-2aa79ccddf13" />
 [https://update.greasyfork.org/scripts/559565/Import%20from%20Clipboard.user.js](Userscript Install Link)
 
 ## Ambrosia Auto Swap
