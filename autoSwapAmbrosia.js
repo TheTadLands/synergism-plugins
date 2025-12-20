@@ -18,6 +18,7 @@
         const okButton = document.getElementById("ok_alert");
         const tooltipModal = document.getElementById("modal");
         const tooltipText = document.getElementById("modalContent");
+        const toggleButton = document.getElementById("blueberryToggleMode");
 
         const loadoutSlots = Array.from(document.getElementsByClassName("blueberryLoadoutSlot"))
             .filter((elem) => elem.id.match(/^blueberryLoadout[1-8]$/))
@@ -109,11 +110,26 @@
         loadoutStandard.addEventListener("mouseleave", hideModal);
         loadoutLuck.addEventListener("mouseleave", hideModal);
 
+        toggleButton.addEventListener("click", () => {
+            infoText.textContent = "Auto swapping between loadouts.";
+            loop();
+        });
 
         let ambrosiaLoadoutSelected = false;
         let currentlyLooping = false;
         function loop() {
             currentlyLooping = true;
+            if (!ambrosiaTabActive()) {
+                currentlyLooping = false;
+                return;
+            }
+
+            if (toggleButton.textContent != "MODE: LOAD LOADOUT") {
+                currentlyLooping = false;
+                infoText.textContent = "Auto swap disabled, set MODE to LOAD LOADOUT";
+                return;
+            }
+
             if (!ambrosiaLoadoutSelected && parseFloat(ambrosiaProgress.style.width) > 97) {
                 loadoutSlots.at(loadoutLuck.selectedIndex).click();
                 okButton.click();
@@ -128,7 +144,7 @@
             if (ambrosiaTabActive()) {
                 setTimeout(loop, 100);
             } else {
-                currentlyLooping = false;
+
             }
         }
         ambrosiaTab.addEventListener("click", () => !currentlyLooping && loop());
